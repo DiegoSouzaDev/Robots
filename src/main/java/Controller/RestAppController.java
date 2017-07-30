@@ -1,3 +1,4 @@
+package Controller;
 import java.util.Date;
 
 import org.springframework.boot.SpringApplication;
@@ -7,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @EnableAutoConfiguration
-public class RestApp {
+public class RestAppController {
 
     @RequestMapping("/Hi")
     String home() {
@@ -18,8 +19,5 @@ public class RestApp {
         return new Date().toString();
     }
 
-    public static void main(String[] args) throws Exception {
-        SpringApplication.run(RestApp.class, args);
-    }
 
 }
