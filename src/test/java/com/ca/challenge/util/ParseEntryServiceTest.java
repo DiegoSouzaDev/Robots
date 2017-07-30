@@ -6,16 +6,13 @@ import org.junit.Assert;
 import org.junit.Test;
 
 import com.ca.challenge.action.PossibleAction;
-import com.ca.challenge.model.Coordinate;
-import com.ca.challenge.model.Direction;
 import com.ca.challenge.model.Robot;
 
-public class ParseEntryTest {
-
+public class ParseEntryServiceTest {
 	@Test
 	public void parseParameterTest(){
-		Robot robot = new Robot("First", new Coordinate(0, 0, Direction.NORTH));
-		ParseEntry parseEntry = new ParseEntry();
+		Robot robot = new Robot("First");
+		ParseEntryService parseEntry = new ParseEntryService();
 		
 		List<PossibleAction> ret = parseEntry.parseParameter("MMRMMRMM");		
 		

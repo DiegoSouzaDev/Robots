@@ -2,10 +2,11 @@ C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\action\MoveRobotForward.jav
 C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\RobotApplication.java
 C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\action\TurnRobotLeft.java
 C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\action\TurnRobotRight.java
-C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\util\ParseEntry.java
+C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\util\ParseEntryService.java
 C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\controller\RestAppController.java
 C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\model\Robot.java
 C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\action\PossibleAction.java
 C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\model\Coordinate.java
+C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\util\RobotMoveService.java
 C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\action\InvalidAction.java
 C:\Desenvolvimento\CA\src\main\java\com\ca\challenge\model\Direction.java

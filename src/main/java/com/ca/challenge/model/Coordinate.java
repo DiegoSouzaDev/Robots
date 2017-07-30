@@ -10,12 +10,21 @@ public class Coordinate {
 	private Integer positionY;
 	private Direction direction;
 
-	public Coordinate(final Integer posX, final Integer posY, final Direction direction) {
+	public Coordinate() {
+		setInitialCoordinate();
+	}
+	public Coordinate(final Integer posX, final Integer posY, final Direction direction){
 		this.positionX = posX;
 		this.positionY = posY;
 		this.direction = direction;
 	}
 
+	private void setInitialCoordinate(){
+		positionX = 0;
+		positionY = 0;
+		direction = Direction.NORTH;
+	}
+	
 	public String toString() {
 		final StringBuilder strBuilder = new StringBuilder();
 		strBuilder.append("(")

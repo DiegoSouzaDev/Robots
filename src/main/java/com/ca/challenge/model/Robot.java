@@ -7,11 +7,10 @@ public class Robot {
 	private String name;
 	private Coordinate coordinate;
 	
-	public Robot(String name, Coordinate coordinate){
+	public Robot(String name){
 		this.name = name;
-		this.coordinate = coordinate;
+		this.coordinate = new Coordinate();
 	}
-	
 	
 	public String getCurrentPosition(){
 		return coordinate.toString();
