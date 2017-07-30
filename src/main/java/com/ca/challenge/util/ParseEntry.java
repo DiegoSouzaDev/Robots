@@ -11,7 +11,7 @@ import com.ca.challenge.action.TurnRobotRight;
 
 public class ParseEntry {
 	
-	protected List<PossibleAction> parseParameter(final String parameters){
+	public List<PossibleAction> parseParameter(final String parameters){
 	
 		final List<PossibleAction> listOfActions = new ArrayList<PossibleAction>();
 

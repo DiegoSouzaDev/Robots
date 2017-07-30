@@ -1,6 +1,5 @@
 com\ca\challenge\action\InvalidAction.class
 com\ca\challenge\model\Coordinate.class
-RestAppController.class
 com\ca\challenge\model\Robot.class
 com\ca\challenge\action\PossibleAction.class
 com\ca\challenge\util\ParseEntry.class

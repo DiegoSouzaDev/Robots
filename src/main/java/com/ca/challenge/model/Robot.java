@@ -12,4 +12,8 @@ public class Robot {
 		this.coordinate = coordinate;
 	}
 	
+	
+	public String getCurrentPosition(){
+		return coordinate.toString();
+	}
 }
