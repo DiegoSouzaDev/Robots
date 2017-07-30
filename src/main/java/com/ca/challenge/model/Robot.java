@@ -11,4 +11,5 @@ public class Robot {
 		this.name = name;
 		this.coordinate = coordinate;
 	}
+	
 }

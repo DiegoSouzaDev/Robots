@@ -1,0 +1,5 @@
+com\ca\challenge\model\Direction.class
+com\ca\challenge\util\ParseEntry.class
+RestApp.class
+com\ca\challenge\model\Coordinate.class
+com\ca\challenge\model\Robot.class

@@ -1,22 +1,31 @@
 package com.ca.challenge.model;
 
-import lombok.Data;
+import lombok.Getter;
+import lombok.Setter;
 
-@Data
+@Getter
+@Setter
 public class Coordinate {
 	private Integer positionX;
 	private Integer positionY;
 	private Direction direction;
 
-	public Coordinate(final Integer posX, final Integer posY, final Direction direction){
+	public Coordinate(final Integer posX, final Integer posY, final Direction direction) {
 		this.positionX = posX;
 		this.positionY = posY;
 		this.direction = direction;
 	}
-	
-	private void rotate(){
-		
+
+	public String toString() {
+		final StringBuilder strBuilder = new StringBuilder();
+		strBuilder.append("(")
+				.append(positionX)
+				.append(",")
+				.append(positionY)
+				.append(",")
+				.append(direction.getValue())
+				.append(")");
+		return strBuilder.toString();
 	}
-	
-	
+
 }
