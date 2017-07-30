@@ -1,4 +1,4 @@
-package Controller;
+package com.ca.challenge.controller;
 import java.util.Date;
 
 import org.springframework.boot.SpringApplication;
