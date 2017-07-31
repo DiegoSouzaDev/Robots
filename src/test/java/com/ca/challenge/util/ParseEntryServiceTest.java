@@ -5,18 +5,19 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import com.ca.challenge.action.PossibleAction;
+import com.ca.challenge.action.ActionInterface;
 import com.ca.challenge.model.Robot;
+import com.ca.challenge.service.ParseEntryService;
 
 public class ParseEntryServiceTest {
 	@Test
 	public void parseParameterTest(){
-		Robot robot = new Robot("First");
+		Robot robot = new Robot();
 		ParseEntryService parseEntry = new ParseEntryService();
 		
-		List<PossibleAction> ret = parseEntry.parseParameter("MMRMMRMM");		
+		List<ActionInterface> ret = parseEntry.parseParameter("MMRMMRMM");		
 		
-		for (PossibleAction possibleAction : ret) {
+		for (ActionInterface possibleAction : ret) {
 			possibleAction.executeAction(robot);
 		}
 		Assert.assertEquals("(2,0,S)", robot.getCoordinate().toString());

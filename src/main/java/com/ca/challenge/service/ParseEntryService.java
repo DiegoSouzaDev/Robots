@@ -1,4 +1,4 @@
-package com.ca.challenge.util;
+package com.ca.challenge.service;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -7,24 +7,24 @@ import org.springframework.stereotype.Service;
 
 import com.ca.challenge.action.InvalidAction;
 import com.ca.challenge.action.MoveRobotForward;
-import com.ca.challenge.action.PossibleAction;
+import com.ca.challenge.action.ActionInterface;
 import com.ca.challenge.action.TurnRobotLeft;
 import com.ca.challenge.action.TurnRobotRight;
 
 @Service
 public class ParseEntryService {
 	
-	public List<PossibleAction> parseParameter(final String parameters){
-		final List<PossibleAction> listOfActions = new ArrayList<PossibleAction>();
-		for (int i=0; i < parameters.length(); i++) {
-			listOfActions.add(locateAction(parameters.charAt(i)));
+	public List<ActionInterface> parseParameter(final String parameters){
+		final List<ActionInterface> listOfActions = new ArrayList<ActionInterface>();
+
+		for (Character character : parameters.toCharArray()) {
+			listOfActions.add(locateAction(character));
 		}
 		return listOfActions;
-		
 	}
 
-	private PossibleAction locateAction(Character parameterChar){
-		final PossibleAction action;
+	private ActionInterface locateAction(Character parameterChar){
+		final ActionInterface action;
 		
 		switch (parameterChar){
 		case 'L':

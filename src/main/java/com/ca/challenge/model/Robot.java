@@ -4,11 +4,9 @@ import lombok.Data;
 
 @Data
 public class Robot {
-	private String name;
 	private Coordinate coordinate;
 	
-	public Robot(String name){
-		this.name = name;
+	public Robot(){
 		this.coordinate = new Coordinate();
 	}
 	

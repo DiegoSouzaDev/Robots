@@ -2,7 +2,7 @@ package com.ca.challenge.action;
 
 import com.ca.challenge.model.Robot;
 
-public interface PossibleAction {
+public interface ActionInterface {
 	
 	void executeAction(Robot robot);
 }

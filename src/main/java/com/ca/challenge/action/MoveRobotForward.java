@@ -4,7 +4,7 @@ import com.ca.challenge.model.Coordinate;
 import com.ca.challenge.model.Direction;
 import com.ca.challenge.model.Robot;
 
-public class MoveRobotForward implements PossibleAction {
+public class MoveRobotForward implements ActionInterface {
 
 	@Override
 	public void executeAction(Robot robot) {

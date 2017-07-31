@@ -1,7 +1,0 @@
-com\ca\challenge\action\TurnRobotLeft$1.class
-com\ca\challenge\action\InvalidAction.class
-com\ca\challenge\model\Coordinate.class
-com\ca\challenge\model\Robot.class
-com\ca\challenge\action\PossibleAction.class
-com\ca\challenge\model\Direction.class
-com\ca\challenge\action\TurnRobotLeft.class

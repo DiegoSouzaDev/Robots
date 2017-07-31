@@ -3,7 +3,7 @@ package com.ca.challenge.action;
 import com.ca.challenge.model.Direction;
 import com.ca.challenge.model.Robot;
 
-public class TurnRobotRight implements PossibleAction{
+public class TurnRobotRight implements ActionInterface{
 
 	@Override
 	public void executeAction(Robot robot) {

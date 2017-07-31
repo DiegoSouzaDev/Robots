@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.ca.challenge.util.RobotMoveService;
+import com.ca.challenge.service.RobotMoveService;
 
 @RestController
 @EnableAutoConfiguration
 @RequestMapping("/rest/mars")
 public class RestAppController {
 
-	RobotMoveService robotMoveService;
+	private final RobotMoveService robotMoveService;
 
 	@Autowired
 	public RestAppController(RobotMoveService robotMoveService) {
@@ -21,12 +21,12 @@ public class RestAppController {
 	}
 	
 	@RequestMapping(value="/move/{params}", method=RequestMethod.POST)
-	String move(@PathVariable String params){
+	 public String move(@PathVariable String params){
 		return robotMoveService.move(params);	
 	}
 
 	@RequestMapping("/Hi")
-    String home() {
+    public String home() {
         return "Hello World!";
     }
     
