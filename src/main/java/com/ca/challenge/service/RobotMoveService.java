@@ -7,18 +7,15 @@ import org.springframework.stereotype.Service;
 
 import com.ca.challenge.action.ActionInterface;
 import com.ca.challenge.model.Robot;
-import com.ca.challenge.validator.MovementValidator;
 
 @Service
 public class RobotMoveService {
 
-	private final ParseEntryService parseEntryService;
-	private final MovementValidator movementValidatorService;
-	
+	private ParseEntryService parseEntryService;
+
 	@Autowired
-	 public RobotMoveService(ParseEntryService parseEntryService, MovementValidator movementValidatorService) {
+	 public RobotMoveService(ParseEntryService parseEntryService) {
 		this.parseEntryService = parseEntryService;	
-		this.movementValidatorService = movementValidatorService;
 	}
 	
 	public String move(final String params){
@@ -26,10 +23,7 @@ public class RobotMoveService {
     	final List<ActionInterface> actions = parseEntryService.parseParameter(params);
     	
     	for (ActionInterface action : actions) {
-    		if(movementValidatorService.isValid(action, robot)){
-    			action.executeAction(robot);
-    			
-    		}
+    		action.executeAction(robot);
 		}
 		return robot.getCurrentPosition();
  
