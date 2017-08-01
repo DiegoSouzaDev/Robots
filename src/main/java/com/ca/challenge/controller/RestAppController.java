@@ -1,4 +1,5 @@
 package com.ca.challenge.controller;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -19,15 +20,15 @@ public class RestAppController {
 	public RestAppController(RobotMoveService robotMoveService) {
 		this.robotMoveService = robotMoveService;
 	}
-	
-	@RequestMapping(value="/move/{params}", method=RequestMethod.POST)
-	 public String move(@PathVariable String params){
-		return robotMoveService.move(params);	
+
+	@RequestMapping(value = "/move/{params}", method = RequestMethod.POST)
+	public String move(@PathVariable String params) {
+		return robotMoveService.move(params);
 	}
 
 	@RequestMapping("/Hi")
-    public String home() {
-        return "Hello World!";
-    }
-    
+	public String home() {
+		return "Hello World!";
+	}
+
 }

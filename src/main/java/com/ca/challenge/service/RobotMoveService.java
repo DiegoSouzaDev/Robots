@@ -11,22 +11,27 @@ import com.ca.challenge.model.Robot;
 @Service
 public class RobotMoveService {
 
-	private ParseEntryService parseEntryService;
+	private final ParseEntryService parseEntryService;
+	private final MovementValidatorService movementValidatorService;
 
 	@Autowired
-	 public RobotMoveService(ParseEntryService parseEntryService) {
-		this.parseEntryService = parseEntryService;	
-	}
-	
-	public String move(final String params){
-    	final Robot robot = new Robot();
-    	final List<ActionInterface> actions = parseEntryService.parseParameter(params);
-    	
-    	for (ActionInterface action : actions) {
-    		action.executeAction(robot);
-		}
-		return robot.getCurrentPosition();
- 
+	public RobotMoveService(ParseEntryService parseEntryService, MovementValidatorService movementValidatorService) {
+		this.parseEntryService = parseEntryService;
+		this.movementValidatorService = movementValidatorService;
 	}
 
+	public String move(final String params) {
+		final Robot robot = new Robot();
+		final List<ActionInterface> actions = parseEntryService.parseParameter(params);
+
+		for (ActionInterface action : actions) {
+			if (movementValidatorService.isValid(robot, action)) {
+				action.executeAction(robot);
+			} else {
+				//TODO:throw exception here
+			}
+		}
+		return robot.getCurrentPosition();
+
+	}
 }

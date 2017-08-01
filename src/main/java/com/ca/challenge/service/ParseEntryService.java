@@ -5,28 +5,27 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import com.ca.challenge.action.ActionInterface;
 import com.ca.challenge.action.InvalidAction;
 import com.ca.challenge.action.MoveRobotForward;
-import com.ca.challenge.action.ActionInterface;
 import com.ca.challenge.action.TurnRobotLeft;
 import com.ca.challenge.action.TurnRobotRight;
 
 @Service
 public class ParseEntryService {
-	
-	public List<ActionInterface> parseParameter(final String parameters){
-		final List<ActionInterface> listOfActions = new ArrayList<ActionInterface>();
 
-		for (Character character : parameters.toCharArray()) {
+	public List<ActionInterface> parseParameter(final String parameters) {
+		final List<ActionInterface> listOfActions = new ArrayList<ActionInterface>();
+		for (final Character character : parameters.toCharArray()) {
 			listOfActions.add(locateAction(character));
 		}
 		return listOfActions;
 	}
 
-	private ActionInterface locateAction(Character parameterChar){
+	private ActionInterface locateAction(final Character parameterChar) {
 		final ActionInterface action;
-		
-		switch (parameterChar){
+
+		switch (parameterChar) {
 		case 'L':
 			action = new TurnRobotLeft();
 			break;
@@ -39,8 +38,7 @@ public class ParseEntryService {
 		default:
 			action = new InvalidAction();
 		}
-		
 		return action;
 	}
-	
+
 }
