@@ -1,4 +1,4 @@
-package com.ca.challenge.util;
+package com.ca.challenge.service;
 
 import java.util.List;
 
@@ -7,7 +7,6 @@ import org.junit.Test;
 
 import com.ca.challenge.action.ActionInterface;
 import com.ca.challenge.model.Robot;
-import com.ca.challenge.service.ParseEntryService;
 
 public class ParseEntryServiceTest {
 	@Test

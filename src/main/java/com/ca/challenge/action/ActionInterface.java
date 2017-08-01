@@ -4,5 +4,9 @@ import com.ca.challenge.model.Robot;
 
 public interface ActionInterface {
 	
-	void executeAction(Robot robot);
+	default Boolean isValid(final Robot robot) {
+		return Boolean.TRUE;
+	}
+	
+	void executeAction(final Robot robot);
 }

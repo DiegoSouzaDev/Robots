@@ -2,6 +2,7 @@ package com.ca.challenge.action;
 
 import com.ca.challenge.model.Coordinate;
 import com.ca.challenge.model.Direction;
+import com.ca.challenge.model.MarcianTerrain;
 import com.ca.challenge.model.Robot;
 
 public class MoveRobotForward implements ActionInterface {
@@ -40,5 +41,23 @@ public class MoveRobotForward implements ActionInterface {
 			break;
 		}
 		return newCoord;
+	}
+
+	@Override
+	public Boolean isValid(final Robot robot) {
+		final Coordinate simulatedCoord = calculateNewCoordinate(robot);
+		final MarcianTerrain marcianTerrain = new MarcianTerrain();
+
+		return isValidMovementInAxisX(simulatedCoord, marcianTerrain)
+				&& isValidMovementInAxisY(simulatedCoord, marcianTerrain);
+
+	}
+
+	private Boolean isValidMovementInAxisX(final Coordinate simulatedCoord, final MarcianTerrain marcianTerrain) {
+		return simulatedCoord.getPositionX() >= 0 && simulatedCoord.getPositionX() <= marcianTerrain.getMaxPositionX();
+	}
+
+	private Boolean isValidMovementInAxisY(final Coordinate simulatedCoord, final MarcianTerrain marcianTerrain) {
+		return simulatedCoord.getPositionY() >= 0 && simulatedCoord.getPositionY() <= marcianTerrain.getMaxPositionY();
 	}
 }

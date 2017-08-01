@@ -12,12 +12,10 @@ import com.ca.challenge.model.Robot;
 public class RobotMoveService {
 
 	private final ParseEntryService parseEntryService;
-	private final MovementValidatorService movementValidatorService;
 
 	@Autowired
-	public RobotMoveService(ParseEntryService parseEntryService, MovementValidatorService movementValidatorService) {
+	public RobotMoveService(ParseEntryService parseEntryService) {
 		this.parseEntryService = parseEntryService;
-		this.movementValidatorService = movementValidatorService;
 	}
 
 	public String move(final String params) {
@@ -25,7 +23,7 @@ public class RobotMoveService {
 		final List<ActionInterface> actions = parseEntryService.parseParameter(params);
 
 		for (ActionInterface action : actions) {
-			if (movementValidatorService.isValid(robot, action)) {
+			if (action.isValid(robot)) {
 				action.executeAction(robot);
 			} else {
 				//TODO:throw exception here
