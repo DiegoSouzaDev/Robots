@@ -6,10 +6,10 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.ca.challenge.action.ActionInterface;
-import com.ca.challenge.action.InvalidAction;
 import com.ca.challenge.action.MoveRobotForward;
 import com.ca.challenge.action.TurnRobotLeft;
 import com.ca.challenge.action.TurnRobotRight;
+import com.ca.challenge.exception.InvalidActionException;
 
 @Service
 public class ParseEntryService {
@@ -36,7 +36,7 @@ public class ParseEntryService {
 			action = new MoveRobotForward();
 			break;
 		default:
-			action = new InvalidAction();
+			 throw new InvalidActionException();
 		}
 		return action;
 	}

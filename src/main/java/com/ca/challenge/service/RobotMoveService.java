@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.ca.challenge.action.ActionInterface;
+import com.ca.challenge.exception.InvalidMoveException;
 import com.ca.challenge.model.Robot;
 
 @Service
@@ -26,7 +27,7 @@ public class RobotMoveService {
 			if (action.isValid(robot)) {
 				action.executeAction(robot);
 			} else {
-				//TODO:throw exception here
+				throw new InvalidMoveException();
 			}
 		}
 		return robot.getCurrentPosition();
