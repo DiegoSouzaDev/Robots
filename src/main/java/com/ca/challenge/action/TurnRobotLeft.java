@@ -7,7 +7,6 @@ public class TurnRobotLeft implements ActionInterface {
 	
 	@Override
 	public void executeAction(Robot robot) {
-		
 		final Direction curDirection = robot.getCoordinate().getDirection();
 		final Direction newDirection;
 		

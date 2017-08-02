@@ -8,45 +8,44 @@ import com.ca.challenge.model.Direction;
 import com.ca.challenge.model.Robot;
 
 public class TurnRobotLeftTest {
-
 	
 	private TurnRobotLeft turnRobotLeft;
 	
 	@Before
-	public void initialize(){
+	public void initialize() {
 		turnRobotLeft = new TurnRobotLeft();
 	}
 	
 	@Test
-	public void turnLeftFromNorth(){
+	public void turnLeftFromNorth() {
 		final Robot robot = createRobot(Direction.NORTH);
 		turnRobotLeft.executeAction(robot);
 		Assert.assertEquals(Direction.WEST, robot.getCoordinate().getDirection());
 	}
 	
 	@Test
-	public void turnLeftFromWest(){
+	public void turnLeftFromWest() {
 		final Robot robot = createRobot(Direction.WEST);
 		turnRobotLeft.executeAction(robot);
 		Assert.assertEquals(Direction.SOUTH, robot.getCoordinate().getDirection());
 	}
 	
 	@Test
-	public void turnLeftFromSouth(){
+	public void turnLeftFromSouth() {
 		final Robot robot = createRobot(Direction.SOUTH);
 		turnRobotLeft.executeAction(robot);
 		Assert.assertEquals(Direction.EAST, robot.getCoordinate().getDirection());
 	}
 	
 	@Test
-	public void turnLeftFromEast(){
+	public void turnLeftFromEast() {
 		final Robot robot = createRobot(Direction.EAST);
 		turnRobotLeft.executeAction(robot);
 		Assert.assertEquals(Direction.NORTH, robot.getCoordinate().getDirection());
 	}
 	
 	@Test
-	public void isValidToTurnLeft(){
+	public void isValidToTurnLeft() {
 		final Robot robot = new Robot();
 		Assert.assertTrue(turnRobotLeft.isValid(robot));
 	}

@@ -9,14 +9,14 @@ import com.ca.challenge.model.Direction;
 import com.ca.challenge.model.Robot;
 
 public class MoveRobotForwardTest {
-
+	
 	private MoveRobotForward moveRobotForward;
-
+	
 	@Before
 	public void initialize() {
 		moveRobotForward = new MoveRobotForward();
 	}
-
+	
 	@Test
 	public void calculateMoveNorthCoordinate() {
 		final Robot robot = createRobot(Direction.NORTH);
@@ -24,7 +24,7 @@ public class MoveRobotForwardTest {
 		robot.setCoordinate(coord);
 		Assert.assertEquals("(3,4,N)", robot.getCurrentPosition());
 	}
-
+	
 	@Test
 	public void calculateMoveWestCoordinate() {
 		final Robot robot = createRobot(Direction.WEST);
@@ -32,7 +32,7 @@ public class MoveRobotForwardTest {
 		robot.setCoordinate(coord);
 		Assert.assertEquals("(2,3,W)", robot.getCurrentPosition());
 	}
-
+	
 	@Test
 	public void calculateMoveSouthCoordinate() {
 		final Robot robot = createRobot(Direction.SOUTH);
@@ -40,7 +40,7 @@ public class MoveRobotForwardTest {
 		robot.setCoordinate(coord);
 		Assert.assertEquals("(3,2,S)", robot.getCurrentPosition());
 	}
-
+	
 	@Test
 	public void calculateMoveEastCoordinate() {
 		final Robot robot = createRobot(Direction.EAST);
@@ -48,7 +48,7 @@ public class MoveRobotForwardTest {
 		robot.setCoordinate(coord);
 		Assert.assertEquals("(4,3,E)", robot.getCurrentPosition());
 	}
-
+	
 	@Test
 	public void isValidToMove() {
 		final Robot validRobot = new Robot();
@@ -68,5 +68,5 @@ public class MoveRobotForwardTest {
 		robot.setCoordinate(new Coordinate(3, 3, direction));
 		return robot;
 	}
-
+	
 }

@@ -23,7 +23,7 @@ public class RequestExceptionHandler {
 	@ExceptionHandler(InvalidMoveException.class)
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
 	public String invalidMovementException(InvalidMoveException e) {
-		return "400 Bad Request: Invalid Movement";
+		return "400 Bad Request: Move to a Invalid Position";
 		
 	}
 	
