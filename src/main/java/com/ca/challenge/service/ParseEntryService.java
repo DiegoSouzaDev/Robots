@@ -13,7 +13,7 @@ import com.ca.challenge.exception.InvalidActionException;
 
 @Service
 public class ParseEntryService {
-
+	
 	public List<ActionInterface> parseParameter(final String parameters) {
 		final List<ActionInterface> listOfActions = new ArrayList<ActionInterface>();
 		for (final Character character : parameters.toCharArray()) {
@@ -21,24 +21,24 @@ public class ParseEntryService {
 		}
 		return listOfActions;
 	}
-
+	
 	private ActionInterface locateAction(final Character parameterChar) {
 		final ActionInterface action;
-
+		
 		switch (parameterChar) {
-		case 'L':
-			action = new TurnRobotLeft();
-			break;
-		case 'R':
-			action = new TurnRobotRight();
-			break;
-		case 'M':
-			action = new MoveRobotForward();
-			break;
-		default:
-			 throw new InvalidActionException();
+			case 'L':
+				action = new TurnRobotLeft();
+				break;
+			case 'R':
+				action = new TurnRobotRight();
+				break;
+			case 'M':
+				action = new MoveRobotForward();
+				break;
+			default:
+				throw new InvalidActionException();
 		}
 		return action;
 	}
-
+	
 }

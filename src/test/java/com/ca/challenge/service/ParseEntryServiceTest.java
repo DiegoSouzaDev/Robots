@@ -9,12 +9,13 @@ import com.ca.challenge.action.ActionInterface;
 import com.ca.challenge.model.Robot;
 
 public class ParseEntryServiceTest {
+	
 	@Test
-	public void parseParameterTest(){
+	public void parseParameterTest() {
 		Robot robot = new Robot();
 		ParseEntryService parseEntry = new ParseEntryService();
 		
-		List<ActionInterface> ret = parseEntry.parseParameter("MMRMMRMM");		
+		List<ActionInterface> ret = parseEntry.parseParameter("MMRMMRMM");
 		
 		for (ActionInterface possibleAction : ret) {
 			possibleAction.executeAction(robot);

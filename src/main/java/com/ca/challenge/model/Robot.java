@@ -6,11 +6,11 @@ import lombok.Data;
 public class Robot {
 	private Coordinate coordinate;
 	
-	public Robot(){
+	public Robot() {
 		this.coordinate = new Coordinate();
 	}
 	
-	public String getCurrentPosition(){
+	public String getCurrentPosition() {
 		return coordinate.toString();
 	}
 }

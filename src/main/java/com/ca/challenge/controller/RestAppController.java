@@ -13,22 +13,17 @@ import com.ca.challenge.service.RobotMoveService;
 @EnableAutoConfiguration
 @RequestMapping("/rest/mars")
 public class RestAppController {
-
+	
 	private final RobotMoveService robotMoveService;
-
+	
 	@Autowired
 	public RestAppController(RobotMoveService robotMoveService) {
 		this.robotMoveService = robotMoveService;
 	}
-
+	
 	@RequestMapping(value = "/move/{params}", method = RequestMethod.POST)
 	public String move(@PathVariable String params) {
 		return robotMoveService.move(params);
 	}
-
-	@RequestMapping("/Hi")
-	public String home() {
-		return "Hello World!";
-	}
-
+	
 }

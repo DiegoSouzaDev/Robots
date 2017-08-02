@@ -7,9 +7,8 @@ public class MarcianTerrain {
 	private Integer maxPositionX;
 	private Integer maxPositionY;
 	
-	public MarcianTerrain(){
+	public MarcianTerrain() {
 		maxPositionX = 5;
 		maxPositionY = 5;
 	}
-
 }

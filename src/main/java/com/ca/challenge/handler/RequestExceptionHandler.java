@@ -14,17 +14,17 @@ import com.ca.challenge.exception.InvalidMoveException;
 public class RequestExceptionHandler {
 	
 	@ExceptionHandler(InvalidActionException.class)
-	@ResponseStatus(value=HttpStatus.BAD_REQUEST)
-	public String invalidActionHandle(InvalidActionException e){
+	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
+	public String invalidActionHandle(InvalidActionException e) {
 		return "400 Bad Request: Invalid Action Instruction";
 		
 	}
 	
 	@ExceptionHandler(InvalidMoveException.class)
-	@ResponseStatus(value=HttpStatus.BAD_REQUEST)
-	public String invalidMovementException(InvalidMoveException e){
+	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
+	public String invalidMovementException(InvalidMoveException e) {
 		return "400 Bad Request: Invalid Movement";
 		
 	}
-
+	
 }
