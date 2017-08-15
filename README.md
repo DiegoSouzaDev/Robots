@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/DiegoSouzaDev/Robots/branch/master/graph/badge.svg)](https://codecov.io/gh/DiegoSouzaDev/Robots)
+
 # Robots
 
 Desafio implementado com Java 8 e SpringBoot, JUnit para testes e Maven para gerenciar a build.
